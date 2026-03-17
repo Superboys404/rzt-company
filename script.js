@@ -1,9 +1,9 @@
 const menuData = [
-  { name: "Seblak", price: 15000, img: "https://i.imgur.com/vryDGdv.jpeg" },
-  { name: "Chicken Krispy", price: 12000, img: "https://i.imgur.com/g8OtxnI.jpeg" },
-  { name: "Es Teh Manis", price: 5000, img: "https://i.imgur.com/yw53q2B.jpeg" },
-  { name: "Es Buah", price: 8000, img: "https://i.imgur.com/XayabNE.jpeg" },
-  { name: "Kerupuk Ikan", price: 4000, img: "https://i.imgur.com/Jw9PBk9.jpeg" }
+  { name: "Seblak", price: 15.000, img: "https://i.imgur.com/vryDGdv.jpeg" },
+  { name: "Chicken Krispy", price: 12.000, img: "https://i.imgur.com/g8OtxnI.jpeg" },
+  { name: "Es Teh Manis", price: 5.000, img: "https://i.imgur.com/yw53q2B.jpeg" },
+  { name: "Es Buah", price: 8.000, img: "https://i.imgur.com/XayabNE.jpeg" },
+  { name: "Kerupuk Ikan", price: 4.000, img: "https://i.imgur.com/Jw9PBk9.jpeg" }
 ];
 
 const menuContainer = document.getElementById("menu");
