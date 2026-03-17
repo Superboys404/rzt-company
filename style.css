@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-  --primary: #ff5722;
-  --secondary: #ff8a50;
-  --bg: #f9fafb;
-  --text: #1f2937;
+  --primary: #00cfff;
+  --secondary: #009dff;
+  --bg: #f4faff;
+  --text: #0f172a;
   --card: #ffffff;
 }
 
 /* DARK MODE */
 body.dark {
-  --bg: #111827;
-  --text: #f3f4f6;
-  --card: #1f2937;
+  --bg: #0b1220;
+  --text: #e0f2fe;
+  --card: #111827;
 }
 
 /* GLOBAL */
@@ -26,14 +26,14 @@ body {
 
 /* HEADER */
 header {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, #00cfff, #009dff);
   color: white;
   padding: 20px;
   text-align: center;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 1px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 207, 255, 0.4);
 }
 
 /* MENU GRID */
@@ -77,7 +77,7 @@ header {
 
 /* BUTTON */
 button {
-  background: var(--primary);
+  background: linear-gradient(135deg, #00cfff, #009dff);
   border: none;
   color: white;
   padding: 10px 14px;
@@ -88,8 +88,8 @@ button {
 }
 
 button:hover {
-  background: #e64a19;
   transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 207, 255, 0.4);
 }
 
 /* CART */
@@ -176,6 +176,6 @@ button:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: linear-gradient(180deg, #00cfff, #009dff);
   border-radius: 10px;
 }
