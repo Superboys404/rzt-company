@@ -66,7 +66,7 @@ function checkout() {
     return;
   }
 
-  let message = "Pesanan saya:%0A";
+  let message = "Halo, saya mau pesan:%0A";
   let total = 0;
 
   cart.forEach(item => {
