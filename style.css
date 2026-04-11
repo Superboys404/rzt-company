@@ -5,17 +5,21 @@
   --secondary: #009dff;
   --bg: #f4faff;
   --text: #0f172a;
-  --card: rgba(255, 255, 255, 0.85);
+  --card: rgba(255, 255, 255, 0.9);
 }
 
 /* DARK MODE */
 body.dark {
   --bg: #0b1220;
   --text: #e0f2fe;
-  --card: rgba(17, 24, 39, 0.85);
+  --card: rgba(17, 24, 39, 0.9);
 }
 
 /* GLOBAL */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -26,73 +30,108 @@ body {
 
 /* HEADER */
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  padding: 0 20px;
-
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  box-shadow: 0 4px 20px rgba(0, 207, 255, 0.3);
-
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 110px;
+  padding: 10px 20px;
+
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 4px 20px rgba(0, 207, 255, 0.3);
 }
 
-/* LOGO */
+/* WRAPPER BRAND */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+/* LOGO DIPERBESAR */
+.brand img {
+  max-height: 70px;
+  width: auto;
+  object-fit: contain;
+
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+  transition: 0.3s;
+}
+
+.brand img:hover {
+  transform: scale(1.08);
+}
+
+/* TEXT ATIRI */
+.brand span {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  header {
+    height: 90px;
+  }
+
+  .brand img {
+    max-height: 55px;
+  }
+
+  .brand span {
+    font-size: 14px;
+  }
+}
+
 header img {
   max-height: 50px;
   width: auto;
   object-fit: contain;
-
-  transition: 0.3s ease;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));
 }
 
-/* HOVER EFFECT (biar keliatan hidup) */
-header img:hover {
-  transform: scale(1.08);
-}
-
-/* RESPONSIVE (biar gak kegedean di HP) */
-@media (max-width: 480px) {
-  header {
-    height: 70px;
-  }
-
-  header img {
-    max-height: 40px;
-  }
-
-/* CONTAINER */
+/* CONTAINER (FIX UTAMA) */
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+
+  gap: 20px;
   padding: 20px;
   padding-bottom: 120px;
-
-  max-width: 1200px;   /* BATAS LEBAR */
-  margin: 0 auto;      /* CENTER */
 }
 
-/* CARD */
+/* CARD (DIPAKSA STABIL) */
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   background: var(--card);
   backdrop-filter: blur(12px);
+
   border-radius: 16px;
   overflow: hidden;
+
+  min-height: 280px;
+
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
+/* GAMBAR FIX */
 .card img {
   width: 100%;
   height: 160px;
@@ -100,13 +139,18 @@ header img:hover {
   display: block;
 }
 
+/* ISI */
+.card-content {
+  padding: 10px;
+}
+
 .card h3 {
-  margin: 10px;
-  font-size: 17px;
+  margin: 0 0 5px;
+  font-size: 16px;
 }
 
 .card p {
-  margin: 0 10px 10px;
+  margin: 0 0 10px;
   font-size: 14px;
   color: #6b7280;
 }
@@ -116,17 +160,13 @@ button {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   border: none;
   color: white;
-  padding: 8px 12px;
+  padding: 8px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
 }
 
-button:hover {
-  transform: scale(1.05);
-}
-
-/* CART FLOATING (INI YANG NGEBENERIN MASALAH LU) */
+/* CART */
 .cart {
   position: fixed;
   right: 15px;
@@ -144,11 +184,10 @@ button:hover {
   padding: 15px;
 
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-
   z-index: 999;
 }
 
-/* CART LIST */
+/* LIST */
 #cart-list {
   list-style: none;
   padding: 0;
@@ -156,54 +195,17 @@ button:hover {
 
   overflow-y: auto;
   max-height: 200px;
-
   font-size: 14px;
 }
 
-#cart-list li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
-
-/* DELETE */
-#cart-list button {
-  background: #ef4444;
-  padding: 3px 6px;
-  font-size: 11px;
-}
-
-/* TOTAL SECTION */
-.cart-footer {
-  margin-top: auto;
-  padding-top: 10px;
-  border-top: 1px solid rgba(0,0,0,0.1);
-}
-
-.total {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-/* CHECKOUT */
-.checkout {
-  width: 100%;
-  background: #22c55e;
-}
-
-.checkout:hover {
-  background: #16a34a;
-}
-
-/* SCROLLBAR */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--primary), var(--secondary));
-  border-radius: 10px;
+/* RESPONSIVE FIX */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
+
+  .cart {
+    width: 90%;
+    right: 5%;
+  }
+}
