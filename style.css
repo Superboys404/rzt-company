@@ -107,7 +107,6 @@ header img {
   overflow: hidden;
 
   min-height: 280px;
-  max-height: 45vh;
 
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   transition: 0.3s;
@@ -159,7 +158,7 @@ button {
   bottom: 15px;
   width: 280px;
 
-  max-height: 50vh; /* BATAS TINGGI */
+  max-height: 30vh; /* BATAS TINGGI */
   overflow: hidden;
 
   display: flex;
