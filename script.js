@@ -98,7 +98,7 @@ function checkout() {
 
   message += `Total: Rp ${total}`;
 
-  const phone = "+6283162695997";
+  const phone = "+62895327197215";
   window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
 }
 
